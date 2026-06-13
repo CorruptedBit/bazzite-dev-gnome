@@ -13,7 +13,7 @@ set -ouex pipefail
 rpm --import https://download.docker.com/linux/fedora/gpg
 dnf5 config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
 
-dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin zed
 
 
 # VsCode from Microsoft
