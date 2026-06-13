@@ -15,8 +15,7 @@ FEDORA_VERSION=$(rpm -E '%{fedora}')
 rpm --import https://download.docker.com/linux/fedora/gpg
 dnf5 config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
 
-dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin zed
-
+dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # VsCode from Microsoft
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
