@@ -10,7 +10,24 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux 
+dnf5 install -y starship docker-ce docker-ce-cli containerd.io
+
+# VsCode from Microsoft
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+cat << 'EOF' > /etc/yum.repos.d/vscode.repo
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+autorefresh=1
+type=rpm-md
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+
+dnf5 install -y code
+
 
 # Use a COPR Example:
 #
