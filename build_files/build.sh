@@ -2,6 +2,8 @@
 
 set -ouex pipefail
 
+FEDORA_VERSION=$(rpm -E '%{fedora}')
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -32,7 +34,11 @@ EOF
 
 dnf5 install -y code
 
-
+# Zed editor (from terra repo)
+curl -fsSL "https://repos.fyralabs.com/terra${FEDORA_VERSION}/key.asc" | tee "/etc/pki/rpm-gpg/RPM-GPG-KEY-terra${FEDORA_VERSION}"
+dnf5 config-manager addrepo --from-repofile="https://repos.fyralabs.com/terra${FEDORA_VERSION}/terra.repo"
+dnf5 install -y zed
+dnf5 config-manager setopt terra.enabled=0
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
