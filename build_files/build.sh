@@ -9,8 +9,12 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y starship docker-ce docker-ce-cli containerd.io
+# Docker
+rpm --import https://download.docker.com/linux/fedora/gpg
+dnf5 config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
+
+dnf5 install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
 
 # VsCode from Microsoft
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
