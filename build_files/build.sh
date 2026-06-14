@@ -41,5 +41,16 @@ dnf5 config-manager setopt terra.enabled=0
 # Flatpaks
 flatpak install -y flathub it.mijorus.gearlever
 
+## GNOME Extensions
+
+# transparent-top-bar
+GNOME_VERSION=$(rpm -q gnome-shell --queryformat '%{VERSION}' | cut -d. -f1)
+EXT_UUID="transparent-top-bar@zhanghai.me"
+curl -L "https://extensions.gnome.org/download-extension/${EXT_UUID}.shell-extension.zip?shell_version=${GNOME_VERSION}" \
+    -o /tmp/${EXT_UUID}.zip
+mkdir -p /usr/share/gnome-shell/extensions/${EXT_UUID}
+unzip /tmp/${EXT_UUID}.zip -d /usr/share/gnome-shell/extensions/${EXT_UUID}
+rm /tmp/${EXT_UUID}.zip
+
 ## System services
 systemctl enable podman.socket

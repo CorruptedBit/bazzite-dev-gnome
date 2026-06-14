@@ -1,3 +1,3 @@
 [org/gnome/shell]
-disabled-extensions=['add-to-steam@pupper.space', 'bazaar-integration@kolunmi.github.io', 'blur-my-shell@aunetx', 'burn-my-windows@schneegans.github.com', 'compiz-alike-magic-lamp-effect@hermes83.github.com', 'desktop-cube@schneegans.github.com', 'gsconnect@andyholmes.github.io', 'logomenu@aryan_k', 'restartto@tiagoporsch.github.io']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'caffeine@patapon.info', 'transparent-top-bar@zhanghai.me']
 favorite-apps=['org.mozilla.firefox.desktop', 'dev.zed.Zed.desktop', 'org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop']
