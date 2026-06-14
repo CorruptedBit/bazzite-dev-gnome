@@ -33,20 +33,16 @@ EOF
 
 dnf5 install -y code
 
-# Zed editor (from terra repo)
-dnf5 config-manager setopt terra.enabled=1
-dnf5 install -y zed
-dnf5 config-manager setopt terra.enabled=0
-
 # Dev tools and CLI utilities
 dnf5 install -y \
     chezmoi \
-    nodejs \
     yt-dlp \
     cmatrix
 
-# Claude Code (requires Node.js)
-npm install -g @anthropic-ai/claude-code
+# Terra Software
+dnf5 config-manager setopt terra.enabled=1
+dnf5 install -y zed
+dnf5 config-manager setopt terra.enabled=0
 
 # Flatpaks
 flatpak install -y flathub io.github.mijorus.gearlever
@@ -56,5 +52,5 @@ dnf5 copr enable -y atim/starship
 dnf5 install -y starship
 dnf5 copr disable -y atim/starship
 
-# System services
+## System services
 systemctl enable podman.socket
