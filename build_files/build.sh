@@ -38,13 +38,23 @@ dnf5 config-manager setopt terra.enabled=1
 dnf5 install -y zed
 dnf5 config-manager setopt terra.enabled=0
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+# Dev tools and CLI utilities
+dnf5 install -y \
+    chezmoi \
+    nodejs \
+    yt-dlp \
+    cmatrix
 
-#### Example for enabling a System Unit File
+# Claude Code (requires Node.js)
+npm install -g @anthropic-ai/claude-code
 
+# Flatpaks
+flatpak install -y flathub io.github.mijorus.gearlever
+
+# COPR software
+dnf5 copr enable -y atim/starship
+dnf5 install -y starship
+dnf5 copr disable -y atim/starship
+
+# System services
 systemctl enable podman.socket
