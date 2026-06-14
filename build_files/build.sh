@@ -33,12 +33,6 @@ EOF
 
 dnf5 install -y code
 
-# Dev tools and CLI utilities
-dnf5 install -y \
-    chezmoi \
-    yt-dlp \
-    cmatrix
-
 # Terra Software
 dnf5 config-manager setopt terra.enabled=1
 dnf5 install -y zed
@@ -46,11 +40,6 @@ dnf5 config-manager setopt terra.enabled=0
 
 # Flatpaks
 flatpak install -y flathub it.mijorus.gearlever
-
-# COPR software
-dnf5 copr enable -y atim/starship
-dnf5 install -y starship
-dnf5 copr disable -y atim/starship
 
 ## System services
 systemctl enable podman.socket
