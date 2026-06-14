@@ -3,3 +3,8 @@
 install-dev-tools:
     brew install --cask claude-code
     brew install starship git-graph
+
+# Install utilities via Homebrew
+[group('Utilities')]
+install-utilities:
+    brew install chezmoi yt-dlp cmatrix
