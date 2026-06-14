@@ -45,7 +45,7 @@ dnf5 install -y zed
 dnf5 config-manager setopt terra.enabled=0
 
 # Flatpaks
-flatpak install -y flathub io.github.mijorus.gearlever
+flatpak install -y flathub it.mijorus.gearlever
 
 # COPR software
 dnf5 copr enable -y atim/starship
