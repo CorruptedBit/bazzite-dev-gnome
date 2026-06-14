@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>Rancho Night</name>
+    <filename>/usr/share/backgrounds/rancho-light.jpg</filename>
+    <filename-dark>/usr/share/backgrounds/rancho-dark.jpg</filename-dark>
+    <options>zoom</options>
+  </wallpaper>
+</wallpapers>
