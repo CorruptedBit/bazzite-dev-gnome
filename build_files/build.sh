@@ -50,6 +50,7 @@ curl -L "https://extensions.gnome.org/download-extension/${EXT_UUID}.shell-exten
     -o /tmp/${EXT_UUID}.zip
 mkdir -p /usr/share/gnome-shell/extensions/${EXT_UUID}
 unzip /tmp/${EXT_UUID}.zip -d /usr/share/gnome-shell/extensions/${EXT_UUID}
+chmod -R a+rX /usr/share/gnome-shell/extensions/${EXT_UUID}
 rm /tmp/${EXT_UUID}.zip
 
 ## System services
