@@ -39,7 +39,9 @@ dnf5 install -y zed
 dnf5 config-manager setopt terra.enabled=0
 
 # Flatpaks
-flatpak install -y flathub it.mijorus.gearlever
+flatpak install -y flathub \
+    it.mijorus.gearlever \
+    com.bitwarden.desktop
 
 ## GNOME Extensions
 
