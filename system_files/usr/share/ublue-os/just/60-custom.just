@@ -7,4 +7,4 @@ install-dev-tools:
 # Install utilities via Homebrew
 [group('Utilities')]
 install-utilities:
-    brew install chezmoi yt-dlp cmatrix
+    brew install chezmoi yt-dlp htop cmatrix
