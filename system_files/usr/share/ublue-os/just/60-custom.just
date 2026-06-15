@@ -8,3 +8,4 @@ install-dev-tools:
 [group('Utilities')]
 install-utilities:
     brew install chezmoi yt-dlp htop cmatrix
+    flatpak install -y flathub it.mijorus.gearlever com.bitwarden.desktop
