@@ -37,6 +37,7 @@ dnf5 install -y code
 dnf5 config-manager setopt terra.enabled=1
 dnf5 install -y zed
 dnf5 config-manager setopt terra.enabled=0
+dnf5 config-manager setopt terra-mesa.enabled=0
 
 ## GNOME Extensions
 
