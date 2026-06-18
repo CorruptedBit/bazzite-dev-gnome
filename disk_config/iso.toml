@@ -1,11 +1,9 @@
-# NOTE: bootc-image-builder handles image installation automatically via ostreecontainer.
-# The image is passed directly by the workflow (build-disk.yml) — no need to bootc switch here.
-# [customizations.installer.kickstart]
-# contents = """
-# %post
-# bootc switch --mutate-in-place --transport registry ghcr.io/CorruptedBit/bazzite-dev-gnome:latest
-# %end
-# """
+[customizations.installer.kickstart]
+contents = """
+%post
+bootc switch --mutate-in-place --transport registry ghcr.io/CorruptedBit/bazzite-dev-gnome:latest
+%end
+"""
 
 [customizations.installer.modules]
 enable = [
